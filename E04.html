@@ -7,6 +7,28 @@
     //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
 
     //ENTRADA
+    let salario = Number(prompt('Informe a sua remuneração mensal').replace(',','.'))
+    let cargo = prompt('Informe o cargo que você ocupa')
+    let horaspordia = Number(prompt('Informe quantas horas trabalha por dia').replace(',','.'))
+    let porhora = (salario / (horaspordia * 20))
+    let novaremu = (salario * 1.5)
+    let novaporhora = (novaremu / (horaspordia * 20))
+    let adicionalprog = (salario * 1.3)
+    let porhoraprog = (adicionalprog / (horaspordia * 20))
+    if (cargo === "Estagiário" || "estagiario" ) {
+        if (horaspordia <= "6")
+        alert(` Você recebe R$ ${porhora.toFixed(2).replace('.',',')} por hora.`)
+        else alert(` Precisa ser contratado. Nova remuneração = R$ ${novaremu.toFixed(2).replace('.',',')}. Valor por hora trabalhada = R$ ${novaporhora.toFixed(2).replace('.',',')}`)
+    }
+    else if (cargo === "Programador" || "programador") {
+        if (horaspordia <= 8)
+        alert(`Você recebe R$ ${porhora.toFixed(2).replace('.',',')} por hora.`)
+        else alert(`Você receberá um adicional de 30%. Seu salário agora é R$ ${adicionalprog.toFixed(2).replace('.',',')}. Você recebe R$ ${porhoraprog.toFixed(2).replace('.',',')} por hora.`)
+    }
+    else {
+        alert(`Opção inválida`)
+    }
+
 
 
     //PROCESSAMENTO
